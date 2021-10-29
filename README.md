@@ -23,7 +23,8 @@ git clone git@github.com:caiotavaresdito/cloudbuild-trivy.git
 
 - Run bash script
 
-**Note:** This script will scan ALL images stored in the gcr.io registry in a project. 
+**Note 1:** This script will scan all latest/in-use images stored in the gcr.io registry in a project. 
+**Note 2:** You **must** be authenticated with gcloud and have the proper permissions to view container registry images.
 
 ```
 ./src/run.sh <my-project-id>
