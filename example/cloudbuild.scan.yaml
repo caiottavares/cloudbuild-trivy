@@ -8,15 +8,15 @@ steps:
     args: ['push', 'gcr.io/$PROJECT_ID/${_IMAGE_NAME}:${_IMAGE_TAG}']
 
   - id: "Static Filesystem Analysis"
-    name: "gcr.io/${PROJECT_ID}/trivy"
+    name: "aquasec/trivy:latest"
     args: ["fs","/workspace"]
 
   - id: "Static Config Analysis"
-    name: "gcr.io/${PROJECT_ID}/trivy"
+    name: "aquasec/trivy:latest"
     args: ["config","/workspace"]
     
   - id: "Docker Image scanning"
-    name: "gcr.io/${PROJECT_ID}/trivy"
+    name: "aquasec/trivy:latest"
     args: ["image","--exit-code 1","--no-progress","--severity CRITICAL","gcr.io/$PROJECT_ID/${_IMAGE_NAME}:${_IMAGE_TAG}"]
 
 substitutions:
