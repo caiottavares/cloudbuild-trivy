@@ -26,6 +26,3 @@ steps:
 substitutions:
     _IMAGE_NAME: example-nodejs
     _IMAGE_TAG: latest
-
-images: ['gcr.io/$PROJECT_ID/trivy']
-tags: ['cloud-builders-community']
