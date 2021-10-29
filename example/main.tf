@@ -2,7 +2,7 @@ provider "google" {}
 
 resource "google_cloudbuild_trigger" "run-on-schedule" {
   name        = "scan-vulnerabilities-trivy"
-  description = "Scheduled build to run vuln. scan on all container images of the project."
+  description = "Build to run vuln. scan on Docker image in the pipeline."
   project     = var.project_id
   filename    = "example/cloudbuild.scan.yaml"
 
