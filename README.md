@@ -4,11 +4,11 @@ Cloudbuild pipeline to scan vulnerabilities on Docker images with Trivy.
 
 # Requirements
 
-| Tool              | URL							   			  |
+| Tool              |  Link/HowTo					   			  |
 | ----------------- |:-------------------------------------------:| 
-| Terraform CLI   	| terraform.io/downloads.html      		      |
-| Git			    | Git 								       	  | 
-| Google Cloud SDK  | cloud.google.com/sdk/docs/install       	  |
+| Terraform CLI   	| [terraform.io/downloads.html](https://terraform.io/downloads.html)      		      |
+| Git			    | yum install git   				       	  | 
+| Google Cloud SDK  | [cloud.google.com/sdk/docs/install](https://cloud.google.com/sdk/docs/install)      	  |
 
 # Usage
 
