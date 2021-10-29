@@ -1,0 +1,15 @@
+steps:
+  - id: "Static Filesystem Analysis"
+    name: "gcr.io/${PROJECT_ID}/trivy"
+    args: ["fs","./"]
+
+  - id: "Static Config Analysis"
+    name: "gcr.io/${PROJECT_ID}/trivy"
+    args: ["config","./"]
+    
+  - id: "Docker Image scanning"
+    name: "gcr.io/${PROJECT_ID}/trivy"
+    args: ["image","--exit-code 1","--no-progress","--severity CRITICAL","<docker-image-tag>"]
+
+images: ['gcr.io/$PROJECT_ID/trivy']
+tags: ['cloud-builders-community']
