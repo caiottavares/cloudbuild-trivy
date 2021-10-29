@@ -10,7 +10,7 @@ Cloudbuild pipeline to scan vulnerabilities on Docker images with Trivy.
 - Clone this repo
 
 ```
-git clone ...
+git clone git@github.com:caiotavaresdito/cloudbuild-trivy.git
 ```
 
 - Update variable values in terraform.tfvars
@@ -33,6 +33,10 @@ cd example/
 terraform init
 terraform apply
 ```
+
+- Commit a change in the repo & open a pull request on GitHub:
+
+![Build preview](img/build_preview.jpeg "Build preview")
 
 # Credits
 
