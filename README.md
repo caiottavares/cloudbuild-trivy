@@ -3,7 +3,32 @@
 Cloudbuild pipeline to scan vulnerabilities on Docker images with Trivy.
 
 # Requirements
+
+| Tool              | URL							   			  |
+| ----------------- |:-------------------------------------------:| 
+| Terraform CLI   	| terraform.io/downloads.html      		      |
+| Git			    | Git 								       	  | 
+| Google Cloud SDK  | cloud.google.com/sdk/docs/install       	  |
+
 # Usage
+
+1) Add the steps to run Trivy scan in your Cloudbuild pipeline. Full example is shown below.
+2) Passive scanning on already existing Docker images. If you would like to scan already existing images in a project, run the bash script as described below:
+
+- Clone this repo
+
+```
+git clone git@github.com:caiotavaresdito/cloudbuild-trivy.git
+```
+
+- Run bash script
+
+**Note:** This script will scan ALL images stored in the gcr.io registry in a project. 
+
+```
+./src/run.sh <my-project-id>
+```
+
 
 # Example
 
