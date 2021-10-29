@@ -1,0 +1,31 @@
+steps:
+  - id: 'Build NodeJS Base Docker Image'
+    name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/${_IMAGE_NAME}:${_IMAGE_TAG}', '.', '-f', 'example/Dockerfile' ]
+
+  - id: 'Push NodeJS Image to gcr'
+    name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/${_IMAGE_NAME}:${_IMAGE_TAG}']
+
+  - id: "Static Filesystem Analysis"
+    name: "aquasec/trivy:latest"
+    args: ["fs","/workspace"]
+
+  - id: "Static Config Analysis"
+    name: "aquasec/trivy:latest"
+    args: ["config","/workspace"]
+    
+  - id: "Docker Image scanning"
+    name: "aquasec/trivy:latest"
+    entrypoint: /bin/sh
+    args:
+      - '-c'
+      - |
+        trivy image --exit-code 1 --no-progress --severity CRITICAL gcr.io/$PROJECT_ID/${_IMAGE_NAME}:${_IMAGE_TAG}
+
+substitutions:
+    _IMAGE_NAME: example-nodejs
+    _IMAGE_TAG: latest
+
+images: ['gcr.io/$PROJECT_ID/trivy']
+tags: ['cloud-builders-community']
