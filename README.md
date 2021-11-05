@@ -1,6 +1,6 @@
 # cloudbuild-trivy
 
-Cloudbuild pipeline to scan vulnerabilities on Docker images with Trivy.
+Cloudbuild pipeline to scan vulnerabilities on Docker images, Config files and FileSystem with Trivy.
 
 # Requirements
 
