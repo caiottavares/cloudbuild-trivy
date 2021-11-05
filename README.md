@@ -15,7 +15,7 @@ Cloudbuild pipeline to scan vulnerabilities on Docker images with Trivy.
 1) Add the steps to run Trivy scan in your Cloudbuild pipeline. Full example is shown below.
 2) Passive scanning on already existing Docker images. If you would like to scan already existing images in a project, run the bash script as described below:
 
-- Clone this repo
+- Clone this repository
 
 ```
 git clone git@github.com:caiotavaresdito/cloudbuild-trivy.git
