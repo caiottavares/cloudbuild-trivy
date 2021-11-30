@@ -7,6 +7,7 @@ steps:
       - |
         echo $_STATE
         echo $$_STATE
+        echo "testing"
   - id: "Static Filesystem Analysis"
     name: "aquasec/trivy:latest"
     args: ["fs","/workspace"]
