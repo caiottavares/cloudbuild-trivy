@@ -1,4 +1,12 @@
 steps:
+  - id: "aaa"
+    name: "aquasec/trivy:latest"
+    entrypoint: /bin/sh
+    args:
+      - '-c'
+      - |
+        echo $_STATE
+        echo $$_STATE
   - id: "Static Filesystem Analysis"
     name: "aquasec/trivy:latest"
     args: ["fs","/workspace"]
