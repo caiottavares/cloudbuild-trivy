@@ -22,7 +22,7 @@ steps:
     args:
       - '-c'
       - |
-        trivy image --exit-code 1 --no-progress --severity CRITICAL gcr.io/$PROJECT_ID/${_IMAGE_NAME}:${_IMAGE_TAG}
+        trivy image --exit-code 1 --no-progress --severity CRITICAL --format json gcr.io/$PROJECT_ID/${_IMAGE_NAME}:${_IMAGE_TAG}
 
 substitutions:
     _IMAGE_NAME: example-nodejs
