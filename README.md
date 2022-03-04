@@ -64,6 +64,6 @@ terraform apply
 
 ![Build preview](img/build_preview.jpeg "Build preview")
 
-# Credits
+# Credits!
 
 [Trivy powered by Aquasec.](https://aquasecurity.github.io/trivy/v0.20.2/getting-started/overview/)
